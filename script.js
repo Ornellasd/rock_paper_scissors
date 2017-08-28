@@ -1,12 +1,25 @@
-function roShamBo() {
+var playerScore = 0;
+var computerScore = 0;
 
-
-  function randomNumber(min, max) {
+function randomNumber(min, max) {
     return Math.random() * (max - min) + min;
-  }
+}
 
+function playerWin() {
+		playerScore++;
+		document.getElementById("player-score").innerHTML = ("Your Score: " + playerScore );
+}
+
+function computerWin() {
+	computerScore++;
+	document.getElementById("computer-score").innerHTML = ("A.I. Score: " + computerScore)
+}
+
+function roShamBo() {
+ 
   var player = prompt("rock (r), paper (p) or scissors (s)?");
   var computTard = Math.floor(randomNumber(1, 4));
+  
   
   //player input
   if (player === "r") {
@@ -32,31 +45,31 @@ function roShamBo() {
 	//Game logic
   if (playerChoice === "rock" && computerChoice === "paper") {
     var result = "computer wins";
+    computerWin();
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
     var result = "player wins";
+    playerWin();
   } else if (playerChoice === "paper" && computerChoice === "rock") {
     var result = "player wins";
-
+    playerWin();
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
     var result = "computer wins";
+    computerWin();
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
     var result = "computer wins";
+    computerWin();
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
     var result = "player wins";
+    playerWin();
   } else if (playerChoice === computerChoice) {
     var result = "Tie game";
   }
 
   document.getElementById("derp").innerHTML = ("Match: " + playerChoice + " vs. " + computerChoice);
   document.getElementById("outcome").innerHTML = ("Result: " + result);
-  document.getElementById("score").innerHTML = ("Score:" + score);
 }
 
 
-/*
-var score = 0;
 
-if(result === "player wins"){
-	score = score + 1;
-}
-*/
+
+
