@@ -2,7 +2,6 @@ var playerScore = 0;
 var computerScore = 0;
 var playerIcon = document.getElementById("player-icon");
 var computerIcon = document.getElementById("computer-icon");
-
 var iconArray = [
   "img/rock.png",
   "img/paper.png",
@@ -24,12 +23,11 @@ function computerWin() {
 }
 
 function roShamBo() {
-
   var player = prompt("rock (r), paper (p) or scissors (s)?");
   var computTard = Math.floor(randomNumber(1, 4));
 
+  //Player input
 
-  //player input
   if (player === "r") {
     var playerChoice = "rock";
     playerIcon.src = iconArray[0];
@@ -38,7 +36,7 @@ function roShamBo() {
     playerIcon.src = iconArray[1];
   } else if (player === "s") {
     var playerChoice = "scissors";
-    playerIcon.src= iconArray[2];
+    playerIcon.src = iconArray[2];
   } else {
     var playerChoice = "ERROR";
   }
@@ -57,28 +55,28 @@ function roShamBo() {
   }
 
   //Game logic
+
   if (playerChoice === "rock" && computerChoice === "paper") {
-    var result = "computer wins";
+    var result = "Computer wins";
     computerWin();
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
-    var result = "player wins";
+    var result = "Player wins";
     playerWin();
   } else if (playerChoice === "paper" && computerChoice === "rock") {
-    var result = "player wins";
+    var result = "Player wins";
     playerWin();
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
-    var result = "computer wins";
+    var result = "Computer wins";
     computerWin();
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
-    var result = "computer wins";
+    var result = "Computer wins";
     computerWin();
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
-    var result = "player wins";
+    var result = "Player wins";
     playerWin();
   } else if (playerChoice === computerChoice) {
     var result = "Tie game";
   }
 
-  document.getElementById("derp").innerHTML = ("Match: " + playerChoice + " vs. " + computerChoice);
-  document.getElementById("outcome").innerHTML = ("Result: " + result);
+  document.getElementById("outcome").innerHTML = ("Result: " + result + "!");
 }
