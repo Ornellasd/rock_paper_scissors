@@ -1,7 +1,7 @@
 var playerScore = 0;
 var computerScore = 0;
-
-var resultImg = document.getElementById("derp-image");
+var playerIcon = document.getElementById("player-icon");
+var computerIcon = document.getElementById("computer-icon");
 
 var iconArray = [
   "img/rock.png",
@@ -32,13 +32,13 @@ function roShamBo() {
   //player input
   if (player === "r") {
     var playerChoice = "rock";
-    resultImg.src = iconArray[0];
+    playerIcon.src = iconArray[0];
   } else if (player === "p") {
     var playerChoice = "paper";
-    resultImg.src = iconArray[1];
+    playerIcon.src = iconArray[1];
   } else if (player === "s") {
     var playerChoice = "scissors";
-    resultImg.src= iconArray[2];
+    playerIcon.src= iconArray[2];
   } else {
     var playerChoice = "ERROR";
   }
@@ -47,10 +47,13 @@ function roShamBo() {
 
   if (computTard === 1) {
     var computerChoice = "rock";
+    computerIcon.src = iconArray[0];
   } else if (computTard === 2) {
     var computerChoice = "paper";
+    computerIcon.src = iconArray[1];
   } else {
     var computerChoice = "scissors";
+    computerIcon.src = iconArray[2];
   }
 
   //Game logic
