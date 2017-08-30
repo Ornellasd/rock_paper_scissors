@@ -12,31 +12,23 @@
   </head>
 
   <body>
-
   	<div class="jumbotron text-center" id="title-text">
   		<h1 id="title">RO SHAM BO!</p>
 	</div>
-
   	<div class="container">
-  		<div class="text-center">
-		    <button onclick="roShamBo()">Play</button>
-
+  		<div id ="main-view" class="text-center">
 		    <p id="derp"></p>
-
-		    <img id="player-icon" src="" /> VS
-		    <img id="computer-icon" src="" />
-
+		    <div id ="icons">
+			    <img id="player-icon" src="" /> VS
+			    <img id="computer-icon" src="" />
+		    </div>
 		    <p id="outcome"></p>
-
 		    Player Score:
-
 		    <p id="player-score"></p>
-
 		    Computer Score:
-
 		    <p id="computer-score"></p>
+		    <button  type = "button" class="btn btn-info" onclick="roShamBo()">Play</button>
 	    </div>
-
     </div>
     <script src="script.js"></script>
   </body>
